@@ -1,1 +1,3 @@
-console.log("main.ts");
+import { ImageType, ImageExtension } from "utils/types";
+
+console.log(ImageType, ImageExtension);

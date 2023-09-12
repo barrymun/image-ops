@@ -1,8 +1,14 @@
 {
   "name": "image-ops",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.0.1",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-tsconfig-paths": "^4.2.1"
+  },
   "lint-staged": {
     "src/**/*.ts": [
       "prettier --write \"src/**/*.ts\""
@@ -14,12 +20,5 @@
     "preview": "vite preview",
     "prepare": "husky install"
   },
-  "devDependencies": {
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "prettier": "^3.0.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-    "vite-tsconfig-paths": "^4.2.1"
-  }
+  "type": "module"
 }

@@ -1,3 +1,3 @@
-import 'assets/style.css';
+import "assets/style.css";
 
-console.log('main.ts');
+console.log("main.ts");

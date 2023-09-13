@@ -1,4 +1,4 @@
-import { blueCoefficient, greenCoefficient, redCoefficient } from "utils/constants";
+import { blueCoefficient, greenCoefficient, redCoefficient } from "./utils/constants";
 
 const convertToGreyscale = ({
   sourceCanvas,

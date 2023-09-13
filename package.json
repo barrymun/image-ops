@@ -1,8 +1,10 @@
 {
+  "author": "barrymun",
+  "license": "MIT",
   "name": "image-ops",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Provides a variety of image manipulation functions.",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "devDependencies": {
     "bun-types": "^1.0.1",
     "husky": "^8.0.3",

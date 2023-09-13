@@ -1,9 +1,7 @@
 {
-  "author": "barrymun",
-  "license": "MIT",
   "name": "image-ops",
   "version": "1.0.0",
-  "description": "Provides a variety of image manipulation functions.",
+  "author": "barrymun",
   "main": "dist/index.js",
   "devDependencies": {
     "bun-types": "^1.0.1",
@@ -12,6 +10,8 @@
     "prettier": "^3.0.3",
     "typescript": "^5.0.2"
   },
+  "description": "Provides a variety of image manipulation functions.",
+  "license": "MIT",
   "lint-staged": {
     "src/**/*.ts": [
       "prettier --write \"src/**/*.ts\""

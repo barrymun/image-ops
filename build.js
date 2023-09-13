@@ -4,6 +4,6 @@ await Bun.build({
   target: "browser",
   format: "esm",
   splitting: true,  // https://bun.sh/docs/bundler#splitting
-  sourcemap: "external",
-  minify: true,
+  sourcemap: "none",
+  // minify: true,
 });

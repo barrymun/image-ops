@@ -19,7 +19,7 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "build": "bun build src/index.ts --outdir dist"
+    "build": "tsc --build"
   },
   "type": "module"
 }

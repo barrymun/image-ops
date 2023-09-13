@@ -5,5 +5,5 @@ await Bun.build({
   format: "esm",
   splitting: true,  // https://bun.sh/docs/bundler#splitting
   sourcemap: "none",
-  // minify: true,
+  minify: true,
 });

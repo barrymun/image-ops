@@ -1,6 +1,3 @@
-/// <reference lib="dom" />
-/// <reference lib="dom.iterable" />
-
 import { blueCoefficient, greenCoefficient, redCoefficient } from "utils/constants";
 
 const convertToGreyscale = ({

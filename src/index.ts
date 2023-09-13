@@ -1,15 +1,33 @@
-const isImageUploaded = (event: Event): boolean => {
-  if (!(event.target instanceof HTMLInputElement)) return false;
+/**
+ * Retrieves the target input element from an event if it is of type HTMLInputElement
+ * and has uploaded files. If the event target is not an instance of HTMLInputElement
+ * or doesn't have any files, it returns null.
+ *
+ * @param {Event} event - The event triggered from a file input change.
+ * @returns {HTMLInputElement | null} The target input element with files or null.
+ */
+const getImageTarget = (event: Event): HTMLInputElement | null => {
+  if (!(event.target instanceof HTMLInputElement)) return null;
 
-  if (!event.target.files || event.target.files.length === 0) return false;
+  if (!event.target.files || event.target.files.length === 0) return null;
 
-  return true;
+  return event.target;
 };
 
-const convertImageToCanvas = ({ img }: { img: HTMLImageElement }): HTMLCanvasElement => {
+/**
+ * Converts a given HTMLImageElement into an HTMLCanvasElement. The resulting canvas will have
+ * dimensions that match the provided image. If the canvas 2D context can be retrieved, the image
+ * will be drawn onto the canvas. Otherwise, a blank canvas is returned.
+ *
+ * @param {HTMLImageElement} img - The image element to be converted to canvas.
+ * @returns {HTMLCanvasElement} The canvas with the drawn image or a blank canvas if no 2D context.
+ */
+const convertImageToCanvas = (img: HTMLImageElement): HTMLCanvasElement => {
   // Get canvas context
   const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d")!;
+  const ctx = canvas.getContext("2d");
+
+  if (!ctx) return canvas;
 
   // Set canvas dimensions to match the image
   canvas.width = img.width;
@@ -21,4 +39,4 @@ const convertImageToCanvas = ({ img }: { img: HTMLImageElement }): HTMLCanvasEle
   return canvas;
 };
 
-export { convertImageToCanvas, isImageUploaded };
+export { convertImageToCanvas, getImageTarget };

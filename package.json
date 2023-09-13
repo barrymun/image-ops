@@ -1,6 +1,6 @@
 {
   "name": "image-ops",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "barrymun",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

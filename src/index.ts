@@ -1,17 +1,16 @@
 /**
- * Retrieves the target input element from an event if it is of type HTMLInputElement
- * and has uploaded files. If the event target is not an instance of HTMLInputElement
- * or doesn't have any files, it returns null.
+ * Retrieves the files from the target input element of an event if it is of type HTMLInputElement.
+ * Returns null if the event target is not an instance of HTMLInputElement or if no files are present.
  *
  * @param {Event} event - The event triggered from a file input change.
- * @returns {HTMLInputElement | null} The target input element with files or null.
+ * @returns {FileList | null} A FileList object representing the files selected by the user, or null if none are present or the target is invalid.
  */
-const getImageTarget = (event: Event): HTMLInputElement | null => {
+const getImageTargetFileList = (event: Event): FileList | null => {
   if (!(event.target instanceof HTMLInputElement)) return null;
 
   if (!event.target.files || event.target.files.length === 0) return null;
 
-  return event.target;
+  return event.target.files;
 };
 
 /**
@@ -39,4 +38,4 @@ const convertImageToCanvas = (img: HTMLImageElement): HTMLCanvasElement => {
   return canvas;
 };
 
-export { convertImageToCanvas, getImageTarget };
+export { convertImageToCanvas, getImageTargetFileList };

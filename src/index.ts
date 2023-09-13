@@ -1,36 +1,24 @@
-import { blueCoefficient, greenCoefficient, redCoefficient } from "./utils/constants";
+const isImageUploaded = (event: Event): boolean => {
+  if (!(event.target instanceof HTMLInputElement)) return false;
 
-const convertToGreyscale = ({
-  sourceCanvas,
-  targetCanvas,
-}: {
-  sourceCanvas: HTMLCanvasElement;
-  targetCanvas: HTMLCanvasElement;
-}): void => {
-  // get canvas context
-  const ctx = targetCanvas.getContext("2d")!;
+  if (!event.target.files || event.target.files.length === 0) return false;
 
-  // source and target canvas dimensions must match
-  targetCanvas.width = sourceCanvas.width;
-  targetCanvas.height = sourceCanvas.height;
-
-  // copy source canvas onto target canvas
-  ctx.drawImage(sourceCanvas, 0, 0);
-
-  // Get image data
-  const imageData = ctx.getImageData(0, 0, targetCanvas.width, targetCanvas.height);
-  const data = imageData.data;
-
-  // Convert each pixel to greyscale
-  for (let i = 0; i < data.length; i += 4) {
-    const grey = data[i] * redCoefficient + data[i + 1] * greenCoefficient + data[i + 2] * blueCoefficient;
-    data[i] = grey; // red
-    data[i + 1] = grey; // green
-    data[i + 2] = grey; // blue
-  }
-
-  // Put modified image data back onto canvas
-  ctx.putImageData(imageData, 0, 0);
+  return true;
 };
 
-export { convertToGreyscale };
+const convertImageToCanvas = ({ img }: { img: HTMLImageElement }): HTMLCanvasElement => {
+  // Get canvas context
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d")!;
+
+  // Set canvas dimensions to match the image
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  // Draw the image onto the canvas
+  ctx.drawImage(img, 0, 0, img.width, img.height);
+
+  return canvas;
+};
+
+export { convertImageToCanvas, isImageUploaded };

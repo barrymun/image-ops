@@ -1,6 +1,6 @@
 # Image-Ops
 
-A powerful browser-side image manipulation library. The "image-ops" package provides a collection of operations to easily manipulate images without needing a backend. Most of the image manipulation is achieved by utilising the HTML canvas API.
+A browser-side image manipulation library. The "image-ops" package provides a collection of operations to easily manipulate images without needing a backend. Most of the image manipulation is achieved by utilising the HTML canvas API.
 
 [![NPM](https://img.shields.io/npm/v/image-ops.svg)](https://www.npmjs.com/package/image-ops)
 
